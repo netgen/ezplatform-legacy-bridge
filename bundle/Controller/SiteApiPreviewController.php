@@ -8,14 +8,21 @@ namespace eZ\Bundle\EzPublishLegacyBundle\Controller;
 
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Core\MVC\Symfony\View\ViewManagerInterface;
 use Netgen\Bundle\IbexaSiteApiBundle\Controller\PreviewController as BasePreviewController;
 use Ibexa\Core\MVC\Symfony\SiteAccess;
 use Symfony\Component\HttpFoundation\Request;
 
 class SiteApiPreviewController extends BasePreviewController
 {
-    protected function getForwardRequest(Location $location, Content $content, SiteAccess $previewSiteAccess, Request $request, $language): Request
-    {
+    protected function getForwardRequest(
+        Location $location,
+        Content $content,
+        SiteAccess $previewSiteAccess,
+        Request $request,
+        $language,
+        $viewType = ViewManagerInterface::VIEW_TYPE_FULL
+    ): Request {
         $request = parent::getForwardRequest($location, $content, $previewSiteAccess, $request, $language);
         // If the preview siteaccess is configured in legacy_mode, we forward to the LegacyKernelController.
         if ($this->configResolver->getParameter('legacy_mode', 'ibexa.site_access.config', $previewSiteAccess->name)) {
