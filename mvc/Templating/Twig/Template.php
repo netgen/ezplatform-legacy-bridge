@@ -58,5 +58,6 @@ class Template extends BaseTemplate
 
     protected function doDisplay(array $context, array $blocks = [])
     {
+        yield $this->render($context);
     }
 }
