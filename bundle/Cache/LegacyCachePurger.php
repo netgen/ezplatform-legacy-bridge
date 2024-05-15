@@ -72,7 +72,7 @@ class LegacyCachePurger implements CacheClearerInterface
                         ]
                     )
                 );
-                $helper->clearItems(eZCache::fetchByTag('template,ini,i18n'), 'Legacy file cache (Template, ini and i18n)');
+                $helper->clearItems(eZCache::fetchByTag('content,template,ini,i18n'), 'Legacy file cache (Template, ini and i18n)');
             },
             false,
             false
