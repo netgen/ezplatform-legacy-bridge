@@ -41,22 +41,22 @@ class Template extends BaseTemplate
         echo $this->render($context);
     }
 
-    public function getTemplateName()
+    public function getTemplateName(): string
     {
         return $this->templateName;
     }
 
-    public function getDebugInfo()
+    public function getDebugInfo(): array
     {
         return [];
     }
 
-    public function getSourceContext()
+    public function getSourceContext(): Source
     {
         return new Source('', '');
     }
 
-    protected function doDisplay(array $context, array $blocks = [])
+    protected function doDisplay(array $context, array $blocks = []): iterable
     {
         yield $this->render($context);
     }

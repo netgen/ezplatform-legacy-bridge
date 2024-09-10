@@ -20,7 +20,7 @@
         "ibexa/core": "^4.6",
         "netgen/ibexa-xmltext-fieldtype": "^3.0",
         "netgen/richtext-datatype-bundle": "^2.0",
-        "twig/twig": "^2.12 || ^3.0"
+        "twig/twig": "^3.13"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16.2",
